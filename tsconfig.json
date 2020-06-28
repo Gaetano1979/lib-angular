@@ -15,6 +15,12 @@
     },
     {
       "path": "./e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/prima/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/prima/tsconfig.spec.json"
     }
 ]
 }

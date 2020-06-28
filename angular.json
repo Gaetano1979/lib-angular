@@ -119,6 +119,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "lib-dos"
+    },
+    "prima": {
+      "projectType": "library",
+      "root": "projects/prima",
+      "sourceRoot": "projects/prima/src",
+      "prefix": "pm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/prima/tsconfig.lib.json",
+            "project": "projects/prima/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/prima/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/prima/src/test.ts",
+            "tsConfig": "projects/prima/tsconfig.spec.json",
+            "karmaConfig": "projects/prima/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/prima/tsconfig.lib.json",
+              "projects/prima/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "lib-dos",
+  "cli": {
+    "analytics": "0c0ca610-e808-4535-9067-7afe750460f5"
+  }
 }
